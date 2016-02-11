@@ -1,0 +1,202 @@
+<div class="secContent"> 
+<div data-ng-repeat="error in errors">
+    <div><span class="icon_sprite icon_error error"></span>{{error}}</div>
+</div>
+           
+<div data-ng-form="inventoryForm" >
+    <div data-ng-show="inventoryForm.$dirty" class="dirtynag">* Warning: You have unsaved changes</div>
+    <div class="fieldGroup">
+    <h5 class="studentLayout">Inventory Information <span class="control-label-required">Indicates required field</span></h5>
+    <ul>
+         <li>
+            <span> 
+                <label class="control-label-required" for="inventory.serialNo" required>Serial No:</label>
+                <input type="text" name="serialNo" data-ng-model="inventory.serialNo" />
+            </span>
+         </li>
+       <li>
+            <span> 
+                <label class="control-label-required" for="inventory.category" >Category:</label>
+             <select  data-ng-model="inventory.category" 
+                     data-ng-options="category for category in categories" required>
+                      <option value="">Select...</option>
+              </select>   
+            </span>
+         </li>
+        <li>
+            <span> 
+                <label class="control-label-required" for="inventory.productName" required>Product Name:</label>
+                <input type="text" name="productName" data-ng-model="inventory.productName" />
+            </span>
+         </li>      
+          <li>
+             <span>
+                  <label class="control-label" for="inventory.certificate">Certificate:</label>
+                  <input type="text" data-ui-select2="gradesSelector"  data-ng-model="inventory.certificate" />                 
+              </span>           
+         </li>
+                 
+         <li>
+            <span> 
+                <label class="control-label-required" for="inventory.productNumber" required>Product Number :</label>
+                <input type="text" name="productNumber" data-ng-model="inventory.productNumber" />
+            </span>
+         </li>      
+                 <li>
+                <span> 
+                    <label class="control-label" for="inventory.productType" >Product Type: </label>
+						 <select  data-ng-model="inventory.productType" 
+						                     data-ng-options="name for name in productTypes" required>
+						                      <option value="">Select...</option>
+						  </select>                       
+                    </span>
+            </li>
+         <li>
+            <span> 
+                <label class="control-label-required" for="inventory.batchId" required>batchId :</label>
+                <input type="text" name="batchId" data-ng-model="inventory.batchId" />
+            </span>
+         </li>       
+        <li>
+             <span  class="datepicker"> 
+                  <label  class="control-label-required" for="inventory.manufactureDate">Manufacture Date:</label>
+                    <span class="icon-chevron-calendar" style="width:14px"></span>
+                    <input type="text" name="inventory.manufactureDate" data-date-parser data-datepicker-popup="yyyy-MM-dd"   
+                     data-is-open="manufactureDate.isOpen" data-ng-click="manufactureDate.isOpen=true"  data-ng-model="inventory.manufactureDate" />
+             </span>  
+           </li>    
+        <li>
+             <span  class="datepicker"> 
+                  <label  class="control-label-required" for="inventory.expirationDate">Expiration Date:</label>
+                    <span class="icon-chevron-calendar" style="width:14px"></span>
+                    <input type="text" name="expirationDate" data-date-parser data-datepicker-popup="yyyy-MM-dd" 
+                      data-is-open="expiration.isOpen" data-ng-click="expiration.isOpen=true" 
+                       data-ng-model="inventory.expirationDate"  data-close-text="Close"/>
+             </span>  
+           </li> 
+           <li>
+             <span  class="datepicker"> 
+                  <label  class="control-label-required" for="inventory.shipmenteDate">Shipment Date:</label>
+                    <span class="icon-chevron-calendar" style="width:14px"></span>
+                    <input type="text" name="shipmenteDate" data-date-parser data-datepicker-popup="yyyy-MM-dd" 
+                      data-is-open="shipment.isOpen" data-ng-click="shipment.isOpen=true" 
+                      data-ng-model="inventory.shipmenteDate"  data-close-text="Close"/>
+             </span>  
+           </li> 
+        <li>
+             <span  class="datepicker"> 
+                  <label  class="control-label-required" for="inventory.receivedDate">Received Date:</label>
+                    <span class="icon-chevron-calendar" style="width:14px"></span>
+                    <input type="text" name="receivedDate" data-date-parser data-datepicker-popup="yyyy-MM-dd" 
+                      data-is-open="received.isOpen" data-ng-click="received.isOpen=true" data-datepicker-options="dateOptions"
+                        data-ng-model="inventory.receivedDate"  />
+             </span>  
+           </li>            
+       <li>
+
+            <span> 
+                <label class="control-label-required" for="inventory.transitDuration" required>Transit Duration :</label>
+                <input type="text" name="transitDuration" data-ng-model="inventory.transitDuration" />
+            </span>
+         </li>     
+         </ul>
+
+	    <div>
+	    <label>Received Pallet Details</label>
+	    </div>
+	    <ul style="border:1px solid #a1a1a1;">
+	          <li>
+	             <span>
+	                  <label class="control-label" for="inventory.palletNo">Pallet No:</label>
+	                  <input type="text" name="palletNo"  data-ng-model="inventory.palletNo" />                 
+	              </span>           
+	         </li>
+	          <li>
+	             <span>
+	                  <label class="control-label" for="inventory.noOfCases">Cases/Pallet:</label>
+	                  <input type="text" name="noOfCases"  data-ng-model="inventory.noOfCases" />                 
+	              </span>           
+	         </li>
+	          <li>
+	             <span>
+	                  <label class="control-label" for="inventory.noOfPacks">Pack/Case:</label>
+	                  <input type="text" name="noOfPacks"   data-ng-model="inventory.noOfPacks" />                 
+	              </span>           
+	         </li>
+	          <li>
+	             <span>
+	                  <label class="control-label" for="inventory.packCost">PackCost:</label>
+	                  <input type="text" name="packCost"   data-ng-model="inventory.packCost" />                 
+	              </span>           
+	         </li>
+	          <li>
+	             <span>
+	                  <label class="control-label" for="inventory.caseCost">CaseCost:</label>
+	                  <input type="text" name="caseCost"   data-ng-model="inventory.caseCost" />                 
+	              </span>           
+	         </li>
+	          <li>
+	             <span>
+	                  <label class="control-label" for="inventory.palletCost">PalletCost:</label>
+	                  <input type="text" name="palletCost"  data-ng-model="inventory.palletCost" />                 
+	              </span>           
+	         </li>
+	</ul>
+
+        <!-- div>
+        <label>In Stock  Cost</label>
+        </div>
+        <ul style="border:1px solid #a1a1a1;">
+              <li>
+                 <span>
+                      <label class="control-label" for="inventory.stockPalletNo">Pallet No:</label>
+                      <input type="text" name="stockPalletNo"  data-ng-model="inventory.stockPalletNo" />                 
+                  </span>           
+             </li>
+              <li>
+                 <span>
+                      <label class="control-label" for="inventory.stockNoOfCases">Cases/Pallet:</label>
+                      <input type="text" name="stockNoOfCases"  data-ng-model="inventory.stockNoOfCases" />                 
+                  </span>           
+             </li>
+              <li>
+                 <span>
+                      <label class="control-label" for="inventory.stockNoOfPacks">Pack/Case:</label>
+                      <input type="text" name="stockNoOfPacks"   data-ng-model="inventory.stockNoOfPacks" />                 
+                  </span>           
+             </li>
+              <li>
+                 <span>
+                      <label class="control-label" for="inventory.stockPackCost">PackCost:</label>
+                      <input type="text" name="stockPackCost"   data-ng-model="inventory.stockPackCost" />                 
+                  </span>           
+             </li>
+              <li>
+                 <span>
+                      <label class="control-label" for="inventory.stockCaseCost">CaseCost:</label>
+                      <input type="text" name="stockCaseCost"   data-ng-model="inventory.stockCaseCost" />                 
+                  </span>           
+             </li>
+              <li>
+                 <span>
+                      <label class="control-label" for="inventory.stockPalletCost">PalletCost:</label>
+                      <input type="text" name="stockPalletCost"  data-ng-model="inventory.stockPalletCost" />                 
+                  </span>           
+             </li>
+             </div-->
+    </ul>
+ 
+         <button type="button" class="boxBtn"  data-ng-click="createInventory(inventory)">
+            <span class="btnIcon icon_sprite icon_save2" ></span>
+            <span class="btnText">Create Report</span>
+        </button>       
+   
+            </div>
+         
+         
+         
+     
+</div>
+<div class="clear"></div>
+
+ 

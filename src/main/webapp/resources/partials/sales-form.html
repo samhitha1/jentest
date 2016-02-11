@@ -1,0 +1,84 @@
+<div class="secContent"> 
+<div data-ng-repeat="error in errors">
+    <div><span class="icon_sprite icon_error error"></span>{{error}}</div>
+</div>
+           
+<div data-ng-form="saleForm" >
+    <div data-ng-show="saleForm.$dirty" class="dirtynag">* Warning: You have unsaved changes</div>
+    <div class="fieldGroup">
+    <h5 class="studentLayout">Sale Information <span class="control-label-required">Indicates required field</span></h5>
+    <ul>
+         <li>
+            <span> 
+                <label class="control-label-required" for="sale.saleNo" required>Sale No:</label>
+                <input type="text" name="sale.saleNo" data-ng-model="sale.saleNo" />
+            </span>
+         </li>
+         <li>
+            <span> 
+                <label class="control-label-required" for="sale.invoiceNo" required>Invoice No:</label>
+                <input type="text" name="sale.invoiceNo" data-ng-model="sale.invoiceNo" />
+            </span>
+         </li>
+         <li>
+            <span> 
+                <label class="control-label-required" for="sale.customerNo" required>Customer No:</label>
+                <input type="text" name="sale.customerNo" data-ng-model="sale.customerNo" />
+            </span>
+         </li>
+        <li>
+            <span> 
+                <label class="control-label-required" for="sale.cost" required>Cost :</label>
+                <input type="text" name="sale.cost" data-ng-model="sale.cost" />
+            </span>
+         </li>
+        <li>
+             <span  class="datepicker"> 
+                  <label  class="control-label-required" for="sale.saleDate">Sale Date:</label>
+                    <span class="icon-chevron-calendar" style="width:14px"></span>
+                    <input type="text" name="sale.saleDate" data-date-parser data-datepicker-popup="yyyy-MM-dd"   
+                     data-is-open="saleDate.isOpen" data-ng-click="saleDate.isOpen=true"  data-ng-model="sale.saleDate" />
+             </span>  
+         </li>    
+        <li>
+            <span> 
+                <label class="control-label-required" for="sale.netPay" required>Net Pay :</label>
+                <input type="text" name="sale.netPay" data-ng-model="sale.netPay" />
+            </span>
+         </li>         
+        <li>
+             <span  class="datepicker"> 
+                  <label  class="control-label-required" for="sale.dueDate">Due Date:</label>
+                    <span class="icon-chevron-calendar" style="width:14px"></span>
+                    <input type="text" name="sale.dueDate" data-date-parser  data-datepicker-popup="yyyy-MM-dd"   
+                     data-is-open="dueDate.isOpen" data-ng-click="dueDate.isOpen=true"  data-ng-model="sale.dueDate" />
+             </span>  
+         
+           </li>    
+        <li>
+            <span> 
+                <label class="control-label-required" for="sale.advance" required>Advance :</label>
+                <input type="text" name="sale.advance" data-ng-model="sale.advance" />
+            </span>
+         </li>         
+        <li>
+            <span> 
+                <label class="control-label-required" for="sale.amoutDue" required>Amount Due:</label>
+                <input type="text" name="sale.amoutDue" data-ng-model="sale.amoutDue" />
+            </span>
+         </li>    
+         <li>
+         </li>                 
+    </ul>
+ 
+         <button type="button" class="boxBtn"  data-ng-click="createSale(sale)">
+            <span class="btnIcon icon_sprite icon_save2" ></span>
+            <span class="btnText">Create Sale</span>
+         </button>       
+   
+       </div>
+ 
+</div>
+<div class="clear"></div>
+
+ 
